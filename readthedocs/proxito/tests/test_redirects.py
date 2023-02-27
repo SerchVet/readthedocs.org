@@ -193,25 +193,6 @@ class RedirectTests(BaseDocServing):
         )
         self.assertEqual(r["X-RTD-Redirect"], RedirectType.system.name)
 
-    # We are not canonicalizing custom domains -> public domain for now
-    @pytest.mark.xfail(strict=True)
-    def test_canonicalize_cname_to_public_domain_redirect(self):
-        """Redirect to the public domain if the CNAME is not canonical."""
-        r = self.client.get('/', HTTP_HOST=self.domain.domain)
-        self.assertEqual(r.status_code, 302)
-        self.assertEqual(
-            r['Location'], 'https://project.dev.readthedocs.io/en/latest/',
-        )
-        self.assertEqual(r['X-RTD-Redirect'], 'noncanonical-cname')
-
-        # We should redirect before 404ing
-        r = self.client.get('/en/latest/404after302', HTTP_HOST=self.domain2.domain)
-        self.assertEqual(r.status_code, 302)
-        self.assertEqual(
-            r['Location'], 'https://project.dev.readthedocs.io/en/latest/404after302',
-        )
-        self.assertEqual(r['X-RTD-Redirect'], 'noncanonical-cname')
-
     # Specific Page Redirects
     def test_proper_page_on_subdomain(self):
         r = self.client.get('/page/test.html', HTTP_HOST='project.dev.readthedocs.io')

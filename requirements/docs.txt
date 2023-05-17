@@ -149,7 +149,7 @@ sphinxemoji==0.2.0
     # via -r requirements/docs.in
 sphinxext-opengraph==0.8.1
     # via -r requirements/docs.in
-tornado==6.2
+tornado==6.3.2
     # via livereload
 typing-extensions==4.5.0
     # via myst-parser

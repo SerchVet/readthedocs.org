@@ -154,7 +154,7 @@ funcy==1.18
     # via django-cacheops
 gitdb==4.0.10
     # via gitpython
-gitpython==3.1.31
+gitpython==3.1.32
     # via -r requirements/pip.in
 gunicorn==20.1.0
     # via -r requirements/pip.in

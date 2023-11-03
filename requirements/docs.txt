@@ -66,7 +66,7 @@ packaging==23.0
     #   sphinx
 pbr==5.11.1
     # via sphinxcontrib-video
-pillow==9.4.0
+pillow==10.0.0
     # via matplotlib
 pygments==2.14.0
     # via
@@ -149,7 +149,7 @@ sphinxemoji==0.2.0
     # via -r requirements/docs.in
 sphinxext-opengraph==0.8.1
     # via -r requirements/docs.in
-tornado==6.2
+tornado==6.3.3
     # via livereload
 typing-extensions==4.5.0
     # via myst-parser

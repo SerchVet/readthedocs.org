@@ -28,7 +28,7 @@ docutils==0.18.1
     #   sphinx
     #   sphinx-rtd-theme
     #   sphinx-tabs
-fonttools==4.38.0
+fonttools==4.43.0
     # via matplotlib
 idna==3.4
     # via requests
